@@ -1,8 +1,8 @@
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2")
 #include <bits/stdc++.h>
-
 using namespace std;
-typedef long long ll;
-
+using ll = long long;
 int endflag = 0;
 bool chkError(stack<ll>& stack, const int& i) {
 	if (stack.size() < i) {
@@ -15,14 +15,12 @@ bool chkError(stack<ll>& stack, const int& i) {
 	}
 	return false;
 }
-
 void clearStack(stack<ll>& stack) {
 	while (!stack.empty()) {
 		stack.pop();
 	}
     endflag = 1;
 }
-
 int main() {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 	stack<ll> st1; string s1 = ""; ll N, num;
