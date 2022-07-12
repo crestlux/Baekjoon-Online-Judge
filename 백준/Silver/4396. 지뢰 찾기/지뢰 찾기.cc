@@ -2,12 +2,13 @@
 #pragma GCC target("avx2")
 #include <bits/stdc++.h>
 using namespace std;
+using vc = vector<char>;
 int dx[] = { 0,0,-1,1,-1,1,-1,1 }, dy[] = { -1,1,0,0,-1,-1,1,1 };
 int main() {
     ios::sync_with_stdio(false); cin.tie(NULL);
     int N;
     cin >> N;
-    vector<vector<char>> mines(N, vector<char>(N)), opened(N, vector<char>(N)), num(N, vector<char>(N)), ret(N, vector<char>(N, '.'));
+    vector<vc> mines(N, vc(N)), opened(N, vc(N)), num(N, vc(N)), ret(N, vc(N, '.'));
     for (auto &e1 : mines) {
         for (auto &e2 : e1) cin >> e2;
     }
