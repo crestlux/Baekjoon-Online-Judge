@@ -15,8 +15,7 @@ int main() {
             e1 = { s, s };
             transform(e1.first.begin(), e1.first.end(), e1.first.begin(), ::tolower);
         }
-        ranges::sort(v);
-        cout << v[0].second << "\n";
+        cout << min_element(v.begin(), v.end())->second << "\n";
     }
     return 0;
 }
