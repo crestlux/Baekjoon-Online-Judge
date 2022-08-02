@@ -9,7 +9,7 @@ int main() {
     cin >> s;
     transform(s.begin(), s.end(), s.begin(), ::toupper);
     for (const auto &e : s) alph[e - 'A']++;
-    for (int i = 0; const auto & e : alph) {
+    for (int i = 0; const auto &e : alph) {
         static int maxval = -1;
         if (maxval < e) {
             maxval = e;
