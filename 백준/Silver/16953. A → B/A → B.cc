@@ -3,14 +3,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-constexpr ll MAX = 1e9 + 1;
-bitset<MAX> visited; queue<pair<ll, ll>> q;
+constexpr ll MAX = 1e9 + 1; queue<pair<ll, ll>> q;
 int main() {
     ios::sync_with_stdio(false); cin.tie(NULL);
     ll A, B, ret = -1;
     cin >> A >> B;
     auto bfs = [&](ll x) {
-        visited[x] = true;
         q.push({ x, 1 });
         while (!q.empty()) {
             auto cur = q.front().first, cnt = q.front().second;
@@ -20,8 +18,7 @@ int main() {
                 return;
             }
             auto chk = [&](ll y) {
-                if (y > 0 and y <= B and !visited[y]) {
-                    visited[y] = true;
+                if (y > 0 and y <= B) {
                     q.push({ y, cnt + 1 });
                 }
             };
