@@ -4,8 +4,8 @@
 using namespace std;
 vector<int> kmp(const string &t, const string &p) {
     vector<int> ret;
-    function<vector<int>(string)> buildPi = [&](const string &p) -> vector<int> {
-        int m = static_cast<int>(p.size()), j = 0;
+    auto buildPi = [&](const string &p) {
+        int m = p.size(), j = 0;
         vector<int> pi(m, 0);
         for (int i = 1; i < m; i++) {
             while (j > 0 && p[i] != p[j]) j = pi[j - 1];
@@ -14,7 +14,7 @@ vector<int> kmp(const string &t, const string &p) {
         return pi;
     };
     auto pi = buildPi(p);
-    int n = static_cast<int>(t.size()), m = static_cast<int>(p.size()), j = 0;
+    int n = t.size(), m = p.size(), j = 0;
     for (int i = 0; i < n; i++) {
         while (j > 0 && t[i] != p[j]) j = pi[j - 1];
         if (t[i] == p[j]) {
