@@ -36,9 +36,8 @@ int main() {
         }
     };
     bfs(R);
-    for (int i = 0; const auto & e : order) {
-        if (!i++) continue;
-        cout << e << "\n";
+    for (int i = 1; i <= N; ++i) {
+        cout << order[i] << "\n";
     }
     return 0;
 }
