@@ -9,7 +9,6 @@ int main() {
     ios::sync_with_stdio(false); cin.tie(NULL);
     ll n, ret = 0;
     cin >> n;
-    assert(n >= 1 and n <= 1e5);
     fill(&dp[1][1], &dp[1][1] + 9, 1);
     for (int i = 2; i <= n; ++i) {
         for (int j = 1; j <= 9; ++j) {
@@ -17,7 +16,7 @@ int main() {
         }
     }
     for (int i = 1; i <= 9; ++i) {
-        ret = (ret + dp[n][i] % mod) % mod;
+        ret = (ret + dp[n][i]) % mod;
     }
     cout << ret << "\n";
     return 0;
