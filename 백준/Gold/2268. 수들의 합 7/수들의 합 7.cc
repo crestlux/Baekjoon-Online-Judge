@@ -3,15 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-void build(vector<ll> &arr, vector<ll> &segtree, ll vtx, ll tl, ll tr) {
-    if (tl == tr)  segtree[vtx] = arr[tl];
-    else {
-        ll tm = (tl + tr) / 2;
-        build(arr, segtree, vtx * 2, tl, tm);
-        build(arr, segtree, vtx * 2 + 1, tm + 1, tr);
-        segtree[vtx] = segtree[vtx * 2] + segtree[vtx * 2 + 1];
-    }
-}
 ll sum(vector<ll> &segtree, ll vtx, ll tl, ll tr, ll l, ll r) {
     if (l > r) return 0;
     if (l == tl && r == tr) return segtree[vtx];
@@ -33,7 +24,6 @@ int main() {
     ll N, M;
     cin >> N >> M;
     vector<ll> arr(N), segtree(N << 2);
-    build(arr, segtree, 1, 0, N - 1);
     for (int i = 0; i < M; ++i) {
         ll p, q, r;
         cin >> p >> q >> r;
