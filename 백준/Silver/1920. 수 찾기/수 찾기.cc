@@ -1,39 +1,19 @@
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2")
 #include <bits/stdc++.h>
-
 using namespace std;
-
-int N, M, arr[100001];
-
-int findNum(const int *arr, const int &len, const int &chk) {
-	int start = 0, end = len - 1, mid;
-		while (end >= start) {
-		mid = (start + end) / 2;
-		if (arr[mid] == chk) {
-			return 1;
-		}
-		else if (arr[mid] > chk) {
-			end = mid - 1;
-		}
-		else {
-			start = mid + 1;
-		}
-	}
-	return 0;
-}
-
 int main() {
-	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	cin >> N;
-	for (int i = 0; i < N; i++) {
-		cin >> arr[i];
-	}
-	sort(arr, arr+N);
-	cin >> M;
-	for (int i = 0; i < M; i++) {
-		int chk;
-		cin >> chk;
-		cout << findNum(arr, N, chk) << "\n";
-	}
-
-	return 0;
+    ios::sync_with_stdio(false); cin.tie(NULL);
+    int N, M;
+    cin >> N;
+    vector<int> v1(N);
+    for (auto &e : v1) cin >> e;
+    ranges::sort(v1);
+    cin >> M;
+    vector<int> v2(M);
+    for (auto &e : v2) cin >> e;
+    for (const auto &e : v2) {
+        cout << ranges::binary_search(v1, e) << "\n";
+    }
+    return 0;
 }
