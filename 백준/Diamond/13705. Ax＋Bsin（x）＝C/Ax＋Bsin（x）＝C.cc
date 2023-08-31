@@ -38,8 +38,7 @@ double bisection(__float128 l, __float128 h) {
         else if (ret < 0) l = m;
         else h = m;
     } while ((h - l) > EPS);
-    __float128 bias = 0.5;
-    return __int128_t(m * (__float128)(1e6) + bias) / (__float128)(1e6);
+    return __int128_t(m * (__float128)(1e6) + 0.5) / (__float128)(1e6);
 }
 
 int main() {

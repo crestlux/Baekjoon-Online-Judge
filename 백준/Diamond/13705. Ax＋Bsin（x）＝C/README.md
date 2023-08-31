@@ -1,4 +1,4 @@
-# [Diamond IV] Ax+Bsin(x)=C - 13705 
+# [Diamond V] Ax+Bsin(x)=C - 13705 
 
 [문제 링크](https://www.acmicpc.net/problem/13705) 
 
@@ -8,7 +8,7 @@
 
 ### 분류
 
-임의 정밀도 / 큰 수 연산(arbitrary_precision), 이분 탐색(binary_search), 수학(math), 수치해석(numerical_analysis)
+임의 정밀도 / 큰 수 연산, 이분 탐색, 수학, 수치해석
 
 ### 문제 설명
 
